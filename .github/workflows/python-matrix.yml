@@ -1,24 +1,24 @@
 name: python lint
 
 on:
-   push:
-       braches: [main]
+  push:
+    branches: [main]
 
 jobs:
-    validate:
-       runs-on: ubuntu-latest
+  validate:
+    runs-on: ubuntu-latest
 
-       steps:
-          - names: checkout code
-            uses: action/checkout@v4       
-       steps:
-          - names: step python
-            uses: action/sets-python@v5
-            with:
-              python-version: "3.13"     
-          - names: install dependencies
-            run: pip install -r requirements.txt
-          
-          - names: run linter
-            run: flakes8
-      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run linter
+        run: flake8
