@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
       - name: Code checkout
         uses: actions/checkout@v4
 
@@ -25,7 +24,7 @@ jobs:
           context: .
           push: true
           tags: |
-             ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.ref_name }}
-             ${{ vars.DOCKERHUB_USER }}/github-actions-app:latest
-             ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.sha }}   
-             
+            ghurka/github-actions-app:${{ github.ref_name }}
+            ghurka/github-actions-app:latest
+            ghurka/github-actions-app:${{ github.sha }}
+            
