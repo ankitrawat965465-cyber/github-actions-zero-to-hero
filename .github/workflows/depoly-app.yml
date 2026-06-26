@@ -1,15 +1,17 @@
-name: Depoly Flask app    
+
+name: Deploy Flask app
 
 on:
-    workflow_dispatch:
-  
+  workflow_dispatch:
+
 jobs:
-    depoly:
-        runs-on: self-hosted
+  deploy:
+    runs-on: self-hosted
 
     steps:
-        -name: checkoutcode
-        uses: action/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        -name:depoly with docker compose
+      - name: Deploy with Docker Compose
         run: docker compose up -d --build
+        
