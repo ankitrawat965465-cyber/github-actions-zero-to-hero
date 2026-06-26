@@ -17,3 +17,4 @@ def test_health_body():
     client = app.test_client()
     response = client.get('/health')
     assert response.data == b'Server is up and running'
+    
