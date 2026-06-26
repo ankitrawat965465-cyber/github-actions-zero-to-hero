@@ -1,5 +1,5 @@
 services:
   web:
-    image: ghurka/github-action-app:latest
+    image: ghurka/github-actions-app
     ports:
       - "80:80"
